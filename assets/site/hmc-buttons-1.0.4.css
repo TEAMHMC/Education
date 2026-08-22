@@ -1,0 +1,120 @@
+/* HMC shared button system. v1.0.4
+   1.0.4 fixes the roll-up label colliding with the dot, and long labels pushing
+   the pill out of its container. 1.0.3 centred the overlay's text with
+   justify-content while painting the dot as a radial gradient 25px in from the
+   left edge of that same overlay, so two different rules were positioning two
+   things in one box: centred text has no idea the dot is there. A long label, or
+   a narrow card, slid the text left until it sat under the dot. The overlay now
+   carries padding of its own, 42px on the left (22px of button padding, a 6px
+   dot, a 14px gap) and 22px on the right, with box-sizing:border-box so the
+   padding is taken out of the overlay instead of widening it. The gradient is
+   positioned against the padding box, which padding does not move, so the dot
+   stays exactly where 1.0.3 drew it.
+   The button itself had no max-width either, so a long label grew the pill past
+   the card holding it. It is now capped at 100% and keeps its label on one line,
+   with wrapping allowed again below 380px so nothing overflows on a phone.
+   1.0.3 is left on disk untouched, because other sites are still linked to it.
+   Everything else is unchanged: the CSS dot, the roll-up hover, the
+   data-hmc-dot="off" opt out, and the reduced-motion rule. Pair with
+   hmc-buttons-1.0.4.js, which builds the label copy the roll-up needs without
+   touching each button's markup. */
+
+.hmc-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 14px;
+  padding: 12px 22px;
+  border-radius: 100px;
+  border: 1px solid #0f0f0f;
+  font-size: 16px;
+  line-height: 1.2em;
+  font-weight: 400;
+  text-transform: capitalize;
+  text-decoration: none;
+  cursor: pointer;
+  position: relative;
+  transition-duration: .3s;
+  /* Added in 1.0.4. The pill can no longer grow wider than the card, grid cell,
+     or form column it sits in, and its label stays on one line where it fits. */
+  max-width: 100%;
+  text-align: center;
+  white-space: nowrap;
+}
+
+.hmc-btn-primary { background: #2333df; color: #fff; }
+.hmc-btn-secondary { background: #fff; color: #1a1a1a; }
+
+/* 6px dot, drawn in CSS so no child node is added to React-owned markup.
+   currentColor gives a white dot on the primary fill and a dark one on the
+   secondary. Opt out per button with data-hmc-dot="off" (icon-led buttons). */
+.hmc-btn:not([data-hmc-dot="off"])::before {
+  content: "";
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: currentColor;
+  flex-shrink: 0;
+}
+/* Markup that ships its own dot element keeps working. */
+.hmc-btn-dot { width: 6px; height: 6px; border-radius: 50%; flex-shrink: 0; }
+.hmc-btn-primary .hmc-btn-dot { background: #fff; }
+.hmc-btn-secondary .hmc-btn-dot { background: #0f0f0f; }
+.hmc-btn[data-hmc-dot="off"]::before { display: none; }
+
+/* Roll-up. Implemented as an overlay copy driven by a data attribute rather
+   than by injecting child nodes. These surfaces are React apps, and mutating
+   children that React owns makes it throw NotFoundError on the next render of
+   a button whose label changes (a submitting or busy state). Setting an
+   attribute is safe: worst case React overwrites it and the script re-applies. */
+.hmc-btn { overflow: hidden; }
+.hmc-btn[data-hmc-label]::after {
+  content: attr(data-hmc-label);
+  position: absolute;
+  /* Starts after any leading icon or dot so those stay visible on hover. */
+  inset: 0 0 0 var(--hmc-ov-left, 0px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: inherit;
+  color: inherit;
+  /* Added in 1.0.4. The centred label is now kept clear of the dot by the
+     overlay's own padding: 22px of button padding, a 6px dot, a 14px gap. The
+     border-box sizing keeps the padding inside the overlay, so the overlay
+     still covers the button exactly. */
+  box-sizing: border-box;
+  padding-left: 42px;
+  padding-right: 22px;
+  /* The overlay covers the whole button, so it has to redraw the dot or the
+     dot vanishes for the duration of the hover. Painted as a gradient because
+     a pseudo-element cannot own a child. */
+  background-color: inherit;
+  /* Redraw the ::before dot on the overlay. A pseudo-element cannot own a
+     child, so it is painted as a gradient at the same place the real dot sits:
+     22px left padding + 3px radius = a 6px dot centred at 25px. The gradient is
+     measured from the padding box, which the padding above does not move, so
+     the dot is in the same place it was in 1.0.3. currentColor keeps it white
+     on primary and dark on secondary, like the real one. */
+  background-image: radial-gradient(circle at 25px 50%, currentColor 0 3px, transparent 3.5px);
+  background-repeat: no-repeat;
+  transform: translateY(100%);
+  transition: transform .3s ease;
+}
+/* Buttons with no dot get no dot on the overlay either. */
+.hmc-btn[data-hmc-dot="off"][data-hmc-label]::after { background-image: none; }
+.hmc-btn[data-hmc-label]:hover::after { transform: translateY(0); }
+
+/* Keep the label legible on hover. Some hosts ship a global
+   `a:hover { color: ... }` that would otherwise repaint it. */
+.hmc-btn-primary:hover { color: #fff; opacity: 1; }
+.hmc-btn-secondary:hover { color: #1a1a1a; opacity: 1; }
+
+/* On the narrowest phones a single line is not always available, so the label
+   is allowed to wrap rather than be clipped. The overlay inherits white-space
+   from the button, so both copies wrap together. */
+@media (max-width: 379px) {
+  .hmc-btn { white-space: normal; overflow-wrap: anywhere; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .hmc-btn[data-hmc-label]::after { transition: none; }
+}

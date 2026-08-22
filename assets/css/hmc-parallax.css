@@ -1,0 +1,29 @@
+/* HMC Parallax Layer */
+:root{--hmc-blue:#233dff;--hmc-ink:#0a0a0a;--hmc-paper:#f5efe3;}
+/* .hmc-progress removed — progress bar not used */
+.hmc-mask{background-image:linear-gradient(100deg,var(--hmc-blue),#6b7bff 60%,var(--hmc-blue));background-size:220% 220%;-webkit-background-clip:text;background-clip:text;color:transparent;-webkit-text-fill-color:transparent;animation:hmc-flow 12s ease-in-out infinite}
+.hmc-mask-light{background-image:linear-gradient(100deg,#6b7bff,#fff 55%,#6b7bff)}
+@keyframes hmc-flow{0%,100%{background-position:0% 50%}50%{background-position:100% 50%}}
+.hmc-pin-wrap{position:relative}
+.hmc-pin{position:sticky;top:0;height:100svh;overflow:hidden;display:grid;place-items:center}
+.hmc-pin-bg{position:absolute;inset:-12% 0;z-index:0;will-change:transform}
+.hmc-kinetic{overflow:hidden}
+.hmc-kinetic-row{white-space:nowrap;will-change:transform;font-style:italic;font-weight:900;text-transform:uppercase;line-height:1;letter-spacing:-.02em;font-size:clamp(40px,11vw,150px);font-family:'Inter',-apple-system,sans-serif}
+.hmc-kinetic-row .o{color:transparent;-webkit-text-stroke:1.5px rgba(10,10,10,.32)}
+.hmc-kinetic-row .accent{color:var(--hmc-blue)}
+.hmc-kinetic-row span{padding:0 .18em}
+.hmc-parallax-hero{overflow:hidden}
+.hmc-bg-layer{position:absolute;inset:-14% 0;z-index:0;background-size:cover;background-position:center;will-change:transform}
+.hmc-reveal{opacity:0;transform:translateY(34px);transition:opacity .8s ease,transform .8s cubic-bezier(.2,.7,.2,1)}
+.hmc-reveal.in{opacity:1;transform:none}
+/* Immersive reveal layer (driven by GSAP in hmc-immersive.js). Only hides up-front
+   when JS-driven motion is actually active, so content is never stuck hidden. */
+html.hmc-immersive [data-reveal]{will-change:transform,opacity}
+/* When the immersive scroll-pin drives the slide carousels, tighten the cross-fade
+   so scrolling between slides reads as a crisp reveal instead of two slides ghosting
+   over each other. Opacity/transform TIMING only — does not touch section layout
+   (display / min-height / flex / position). */
+html.hmc-immersive .mission-slide{transition:opacity .3s ease,transform .3s ease}
+html.hmc-immersive .intro-stories-slide{transition:opacity .35s ease-in-out}
+@media(prefers-reduced-motion:reduce){.hmc-mask{animation:none}.hmc-reveal{opacity:1;transform:none;transition:none}.hmc-kinetic-row,.hmc-bg-layer,.hmc-pin-bg,[data-pin-fade],[data-layer]{transform:none!important}html.hmc-immersive [data-reveal]{opacity:1!important;transform:none!important}}
+@media print{.hmc-progress{display:none!important}.hmc-mask{-webkit-text-fill-color:var(--hmc-blue);color:var(--hmc-blue);animation:none}.hmc-reveal{opacity:1!important;transform:none!important}.hmc-bg-layer,.hmc-kinetic-row,.hmc-pin-bg,[data-pin-fade],[data-layer]{transform:none!important}html.hmc-immersive [data-reveal]{opacity:1!important;transform:none!important}}

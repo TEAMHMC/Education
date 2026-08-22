@@ -1,0 +1,682 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Education and Training | Health Matters Clinic</title>
+<meta name="description" content="Free health career courses, Community Health Worker training, Unstoppable facilitator training and the Unboxed series. Self-paced, culturally rooted, and open to anyone in Los Angeles.">
+<link rel="canonical" href="https://education.healthmatters.clinic/">
+
+<meta property="og:type" content="website">
+<meta property="og:title" content="Education and Training | Health Matters Clinic">
+<meta property="og:description" content="Free, self-paced courses and guided cohorts from Health Matters Clinic. Health careers, community health work, facilitator training and the Unboxed series.">
+<meta property="og:url" content="https://education.healthmatters.clinic/">
+<meta name="twitter:card" content="summary">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,700;1,800;1,900&family=Questrial&family=Lato:wght@400;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="./assets/css/hmc-parallax.css">
+<link rel="stylesheet" href="./assets/site/hmc-buttons-1.0.5.css">
+
+<style>
+:root{
+  --hmc-primary:#2333df;
+  --hmc-primary-hover:#1a2ecc;
+  --hmc-secondary:#ff6e40;
+  --hmc-accent:#f9c74f;
+  --hmc-bg:#f5f3ef;
+  --hmc-text:#0a0a0a;
+  --hmc-muted:#2a2540;
+  --hmc-hero:#070707;
+  --hmc-blue:#2333df;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{
+  margin:0;background:var(--hmc-bg);color:var(--hmc-text);
+  font-family:'Inter',-apple-system,BlinkMacSystemFont,sans-serif;
+  font-size:17px;line-height:1.6;-webkit-font-smoothing:antialiased;overflow-x:hidden;
+}
+img{max-width:100%;display:block}
+blockquote{margin:0}
+.wrap{max-width:1240px;margin:0 auto;padding:0 clamp(20px,4vw,40px)}
+.measure{max-width:680px}
+h1,h2,h3,.display{font-family:'Questrial','Inter',sans-serif;font-weight:400}
+
+/* ===================== HERO ===================== */
+/* There is no cleared photography of students, and there will not be, so the
+   hero is built out of type and colour instead of a carousel. Same shell,
+   scrim, glow and grain as MHO and RELIEF. What replaces the slides is a
+   stroked word sitting behind the headline and two colour fields. */
+.hero{position:relative;overflow:hidden;background:var(--hmc-hero);min-height:100vh;height:100svh;display:flex;align-items:flex-end;overflow:hidden}
+.hero-field{position:absolute;inset:0;z-index:0;pointer-events:none}
+.hero-field::before,.hero-field::after{content:'';position:absolute;border-radius:50%;filter:blur(2px)}
+.hero-field::before{left:-18%;top:-24%;width:78%;height:82%;background:radial-gradient(closest-side,rgba(35,51,223,.52),transparent 72%)}
+.hero-field::after{right:-14%;bottom:-18%;width:62%;height:66%;background:radial-gradient(closest-side,rgba(249,199,79,.20),transparent 70%)}
+/* The word behind the headline. Stroke only, so it reads as texture rather than
+   a second heading, and it is hidden from assistive tech. */
+.hero-word{position:absolute;left:50%;top:46%;transform:translate(-50%,-50%);z-index:1;pointer-events:none;
+  font-family:'Inter',sans-serif;font-style:italic;font-weight:900;text-transform:uppercase;letter-spacing:-.03em;
+  font-size:clamp(120px,26vw,360px);line-height:.8;white-space:nowrap;
+  color:transparent;-webkit-text-stroke:1.5px rgba(255,255,255,.13)}
+.hero-grain{position:absolute;inset:0;z-index:3;opacity:.055;pointer-events:none;background-size:160px;background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.85' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E")}
+.hero-scrim{position:absolute;inset:0;z-index:1;background:linear-gradient(180deg,rgba(7,7,7,.62) 0%,rgba(7,7,7,.18) 34%,rgba(7,7,7,.94) 100%)}
+.hero-inner{position:relative;z-index:2;width:100%;padding:clamp(48px,9vw,110px) 0 clamp(38px,6vw,72px)}
+.hero-eyebrow{display:inline-flex;align-items:center;gap:9px;font-size:12px;font-weight:700;letter-spacing:.16em;text-transform:uppercase;color:var(--hmc-accent);margin:0 0 22px}
+.hero-title{color:#fff;font-size:clamp(46px,7.4vw,112px);line-height:.86;letter-spacing:-.02em;max-width:11ch;margin:0 0 26px}
+.hero-title em{font-style:normal;color:var(--hmc-accent)}
+.hero-tagline{color:rgba(255,255,255,.88);font-size:clamp(16px,1.7vw,20px);max-width:58ch;margin:0 0 34px;line-height:1.5}
+.cta-row{display:flex;gap:14px;flex-wrap:wrap;margin-top:34px}
+
+/* ===================== SECTIONS ===================== */
+section{padding:clamp(56px,8vw,110px) 0}
+.eyebrow{display:inline-flex;align-items:center;gap:9px;font-size:12px;font-weight:700;letter-spacing:.16em;text-transform:uppercase;color:var(--hmc-primary);margin:0 0 20px}
+.eyebrow::before{content:'';width:8px;height:8px;border-radius:50%;background:var(--hmc-accent)}
+h2{font-size:clamp(30px,4.6vw,58px);line-height:.98;letter-spacing:-.02em;margin:0 0 22px}
+h3{font-size:1.35rem;line-height:1.15;margin:0 0 10px}
+p{margin:0 0 18px}
+.lede{font-size:clamp(17px,1.9vw,21px);line-height:1.5;color:var(--hmc-muted)}
+.twoup{display:grid;grid-template-columns:repeat(auto-fit,minmax(310px,1fr));gap:clamp(28px,4vw,56px);align-items:start}
+.note{font-size:.86rem;color:var(--hmc-muted);opacity:.85;max-width:70ch;margin:18px 0 0}
+
+/* ===================== METHOD ===================== */
+.method{background:var(--hmc-text);color:#fff;border-radius:26px;padding:clamp(24px,3vw,36px)}
+.method h3{color:var(--hmc-accent)}
+.method dl{display:grid;grid-template-columns:auto 1fr;gap:12px 22px;margin:0;font-size:.93rem}
+.method dt{font-size:10px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:rgba(255,255,255,.55);padding-top:5px;white-space:nowrap}
+.method dd{margin:0;color:rgba(255,255,255,.92)}
+
+/* ===================== STATEMENT BANDS ===================== */
+/* These sit where a photo band sits on the other program sites. A page with
+   no imagery needs somewhere for the eye to rest, and one sentence at display
+   size does that job without pretending a stock photograph is our work. */
+.block{width:calc(100% - clamp(28px,4vw,56px));margin:0 auto;border-radius:clamp(20px,2.6vw,34px);overflow:hidden}
+.statement{background:var(--hmc-primary);color:#fff;padding:clamp(44px,7vw,92px) clamp(24px,4vw,64px)}
+.statement p{font-family:'Questrial','Inter',sans-serif;font-size:clamp(28px,4.4vw,58px);line-height:1.02;letter-spacing:-.02em;margin:0;max-width:19ch}
+.statement .sub{font-family:'Inter',sans-serif;font-size:clamp(15px,1.5vw,18px);line-height:1.5;letter-spacing:0;color:rgba(255,255,255,.82);max-width:56ch;margin:22px 0 0}
+.statement.ink{background:var(--hmc-text)}
+.statement.ink em{font-style:normal;color:var(--hmc-accent)}
+
+/* ===================== DARK SECTION ===================== */
+.dark-sec{background:var(--hmc-text);color:#fff}
+.dark-sec h2{color:#fff}
+.dark-sec h2 em{font-style:normal;color:var(--hmc-accent)}
+.dark-sec .lede{color:rgba(255,255,255,.78)}
+.dark-sec .eyebrow{color:var(--hmc-accent)}
+.dark-sec .note{color:rgba(255,255,255,.58)}
+.steps{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:clamp(20px,2.6vw,32px);margin-top:44px}
+.step{border-top:2px solid var(--hmc-accent);padding-top:18px}
+.step h3{color:#fff;font-size:1.15rem}
+.step .when{font-size:11px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--hmc-accent);display:block;margin-bottom:10px}
+.step p{font-size:.93rem;color:rgba(255,255,255,.74);margin:0}
+
+/* ===================== THE DATED LOG ===================== */
+/* Every card here is one day someone was in a building. The date leads because
+   the dates are the argument. */
+.log{list-style:none;margin:38px 0 0;padding:0;display:grid;grid-template-columns:repeat(auto-fit,minmax(268px,1fr));gap:clamp(14px,1.6vw,20px)}
+.log-item{background:#fff;border:1px solid var(--hmc-text);border-radius:22px;padding:24px 22px;display:flex;flex-direction:column;gap:8px}
+.log-date{font-size:11px;font-weight:700;letter-spacing:.13em;text-transform:uppercase;color:var(--hmc-primary)}
+.log-item h3{font-size:1.08rem;margin:0}
+.log-item p{font-size:.94rem;color:var(--hmc-muted);line-height:1.5;margin:0}
+.log-item.pop{background:var(--hmc-accent)}
+.log-item.pop .log-date{color:var(--hmc-text)}
+.log-item.deep{background:var(--hmc-primary);color:#fff}
+.log-item.deep .log-date{color:var(--hmc-accent)}
+.log-item.deep p{color:rgba(255,255,255,.9)}
+
+/* ===================== SITES ===================== */
+.sites{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:clamp(14px,1.6vw,20px);margin-top:38px}
+.site{background:#fff;border:1px solid var(--hmc-text);border-radius:22px;padding:26px 24px}
+.site h3{font-size:1.12rem;margin-bottom:8px}
+.site address{font-style:normal;font-size:.95rem;color:var(--hmc-muted);line-height:1.55}
+
+/* ===================== LISTS AND CARDS ===================== */
+.slist{background:#fff;border:1px solid var(--hmc-text);border-radius:22px;padding:24px}
+.slist h3{font-size:1.05rem;margin-bottom:12px}
+.slist ul{margin:0;padding-left:19px;font-size:.93rem;color:var(--hmc-muted);line-height:1.6}
+.slist li{margin-bottom:5px}
+.opsgrid{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:clamp(14px,1.6vw,20px);margin-top:20px}
+.involve{display:grid;grid-template-columns:repeat(auto-fit,minmax(272px,1fr));gap:clamp(14px,1.6vw,20px);margin-top:40px}
+.icard{background:#fff;border:1px solid var(--hmc-text);border-radius:24px;padding:28px 26px;display:flex;flex-direction:column;gap:12px}
+.icard.pop{background:var(--hmc-accent)}
+.icard .tag{font-size:11px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--hmc-primary)}
+.icard.pop .tag{color:var(--hmc-text)}
+.icard p{font-size:.94rem;color:var(--hmc-muted);margin:0;flex:1}
+.icard.pop p{color:var(--hmc-text)}
+.icard ul{margin:0;padding-left:19px;font-size:.92rem;color:var(--hmc-muted);line-height:1.55}
+.icard li{margin-bottom:5px}
+.shipbox{background:var(--hmc-primary);color:#fff;border-radius:22px;padding:clamp(24px,3vw,34px);margin-top:24px}
+.shipbox h3{color:var(--hmc-accent);font-size:1.05rem}
+.shipbox p{color:rgba(255,255,255,.9);font-size:.94rem;margin:0 0 12px}
+.shipbox a{color:var(--hmc-accent)}
+.shipbox ul{margin:0 0 18px;padding-left:19px;color:rgba(255,255,255,.92);font-size:.93rem;line-height:1.6}
+.shipbox li{margin-bottom:5px}
+
+/* ===================== CYCLE ===================== */
+.cycle{list-style:none;counter-reset:cyc;margin:38px 0 0;padding:0;
+  display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:clamp(14px,1.6vw,20px)}
+.cyc{counter-increment:cyc;background:#fff;border:1px solid var(--hmc-text);border-radius:22px;padding:26px 24px}
+.cyc::before{content:counter(cyc);display:inline-flex;align-items:center;justify-content:center;
+  width:40px;height:40px;border-radius:50%;background:var(--hmc-primary);color:#fff;
+  font-family:'Questrial',sans-serif;font-size:1.2rem;line-height:1;margin-bottom:16px;font-variant-numeric:tabular-nums}
+.cyc h3{font-size:1.12rem;margin-bottom:8px}
+.cyc p{font-size:.95rem;color:var(--hmc-muted);line-height:1.5;margin:0}
+
+/* ===================== FAQ + FOOTER ===================== */
+.sitefoot{background:var(--hmc-text);color:rgba(255,255,255,.72)}
+.foot-inner{padding:clamp(48px,7vw,88px) 0 0}
+.faq-head{max-width:640px;margin-bottom:36px}
+.faq-title{font-family:'Questrial',sans-serif;font-size:clamp(28px,4vw,44px);color:#fff;margin:0 0 14px;line-height:1}
+.faq-intro{margin:0;font-size:.98rem;color:rgba(255,255,255,.66)}
+.faq-groups{display:grid;grid-template-columns:repeat(auto-fit,minmax(320px,1fr));gap:clamp(26px,4vw,52px)}
+.faq-group h5{font-size:11px;font-weight:700;letter-spacing:.16em;text-transform:uppercase;color:var(--hmc-accent);margin:0 0 12px}
+.faq-item{border-top:1px solid rgba(255,255,255,.16)}
+.faq-item:last-child{border-bottom:1px solid rgba(255,255,255,.16)}
+.faq-item summary{cursor:pointer;padding:15px 0;font-size:1rem;font-weight:600;color:#fff;list-style:none;display:flex;justify-content:space-between;gap:16px}
+.faq-item summary::-webkit-details-marker{display:none}
+.faq-item summary::after{content:'+';font-size:1.25rem;line-height:1;color:var(--hmc-accent);flex:0 0 auto}
+.faq-item[open] summary::after{content:'\2212'}
+.faq-item summary:focus-visible{outline:2px solid var(--hmc-accent);outline-offset:3px}
+.faq-answer{padding:0 0 16px;font-size:.95rem;line-height:1.6;color:rgba(255,255,255,.72);max-width:60ch}
+.faq-answer p{margin:0 0 12px}
+.faq-answer p:last-child{margin:0}
+.faq-answer a{color:var(--hmc-accent)}
+.foot-brand{display:flex;flex-wrap:wrap;gap:28px;justify-content:space-between;align-items:flex-start;
+  margin-top:clamp(40px,6vw,72px);padding-top:32px;border-top:1px solid rgba(255,255,255,.16)}
+.foot-logo{display:inline-block;line-height:0;margin:0 0 14px}
+.foot-logo img{display:block;width:56px;height:56px}
+.foot-logo:focus-visible{outline:2px solid var(--hmc-accent);outline-offset:3px}
+.foot-brand p{margin:0;font-size:.92rem;max-width:44ch}
+.foot-cols{display:flex;flex-wrap:wrap;gap:clamp(28px,5vw,64px)}
+.foot-col h6{font-size:11px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:rgba(255,255,255,.5);margin:0 0 12px}
+.foot-col a{display:block;color:rgba(255,255,255,.8);text-decoration:none;font-size:.93rem;margin-bottom:9px}
+.foot-col a:hover{color:var(--hmc-accent)}
+.foot-legal{display:flex;flex-wrap:wrap;gap:10px 22px;justify-content:space-between;
+  padding:26px 0 34px;margin-top:34px;border-top:1px solid rgba(255,255,255,.16);font-size:.85rem}
+.foot-legal a{color:rgba(255,255,255,.66);margin-right:18px}
+
+/* ===================== KINETIC ===================== */
+.kinetic-wrap{padding:clamp(30px,5vw,54px) 0;background:var(--hmc-bg);border-top:1px solid var(--hmc-text);border-bottom:1px solid var(--hmc-text)}
+/* Continuous marquee, same fix as MHO. The span set is duplicated in the markup,
+   so translating by half the row loops seamlessly instead of leaving the second
+   half of the phrase parked off the right edge. */
+@keyframes hmcMarquee{from{transform:translate3d(0,0,0)}to{transform:translate3d(-50%,0,0)}}
+.kinetic-wrap .hmc-kinetic-row{animation:hmcMarquee 30s linear infinite;will-change:transform}
+@media (prefers-reduced-motion:reduce){.kinetic-wrap .hmc-kinetic-row{animation:none}}
+
+footer{background:var(--hmc-text);color:rgba(255,255,255,.64);padding:44px 0;font-size:.87rem}
+footer a{color:var(--hmc-accent)}
+.skip{position:absolute;left:-9999px}
+.skip:focus{left:20px;top:20px;z-index:99;background:#fff;color:#0a0a0a;padding:12px 18px;border-radius:999px}
+</style></head>
+<body>
+
+<a class="skip" href="#main">Skip to content</a>
+
+<header class="hero hmc-parallax-hero">
+  <div class="hero-field" aria-hidden="true"></div>
+  <div class="hero-word" aria-hidden="true">LEARN</div>
+  <div class="hero-scrim" aria-hidden="true"></div>
+  <div class="hero-grain" aria-hidden="true"></div>
+  <div class="hero-inner">
+    <div class="wrap">
+      <p class="hero-eyebrow">Education and Training</p>
+      <h1 class="hero-title">Learn it here. <em>Free, and free for good.</em></h1>
+      <p class="hero-tagline">Health career courses, community health worker foundations, facilitator training, the Unboxed series and the research behind it. Self-paced, culturally rooted, and open to anyone in Los Angeles who wants them.</p>
+      <div class="cta-row">
+        <a class="hmc-btn hmc-btn-primary" href="#courses">Browse courses</a>
+        <a class="hmc-btn hmc-btn-secondary" href="#schedule">Upcoming cohorts</a>
+        <a class="hmc-btn hmc-btn-secondary" href="#outline">See every lesson</a>
+        <a class="hmc-btn hmc-btn-secondary" href="#research">Read the research</a>
+      </div>
+    </div>
+  </div>
+</header>
+
+<main id="main">
+
+<!-- Course catalog patterns follow the structure Erica asked for: a card per
+     course carrying a level badge and honest lesson-and-duration metadata, an
+     enroll action, and a curriculum outline that can be opened without leaving the
+     page. Lesson rows show a lock and say when they unlock, because the thing that
+     makes that pattern work is telling someone what they get before asking them to
+     sign up. Every count, duration and title below comes from the Academy
+     catalog, not from an estimate. -->
+<style>
+/* ---------- catalog ---------- */
+.cat{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:22px;margin-top:34px}
+.crd{
+  background:#fff;border:1px solid rgba(10,10,10,.1);border-radius:18px;overflow:hidden;
+  display:flex;flex-direction:column;transition:border-color .25s ease,transform .25s ease;
+}
+.crd:hover{border-color:rgba(35,51,223,.4);transform:translateY(-3px)}
+.crd-art{
+  aspect-ratio:16/9;padding:22px;display:flex;flex-direction:column;justify-content:space-between;
+  background:linear-gradient(140deg,#1b1f5c,#2333df 58%,#3a2a7a);color:#fff;position:relative;
+}
+.crd-art.is-teal{background:linear-gradient(140deg,#0f3b34,#12715f 58%,#1b8f6a)}
+.crd-art.is-amber{background:linear-gradient(140deg,#4a2c0a,#a4620d 58%,#d08a1a)}
+.crd-art.is-slate{background:linear-gradient(140deg,#26262b,#43434d 58%,#5b5b68)}
+.crd-badge{
+  align-self:flex-start;font-size:11px;font-weight:700;letter-spacing:.06em;
+  background:rgba(255,255,255,.92);color:#0a0a0a;padding:5px 11px;border-radius:100px;
+}
+.crd-art h3{font-family:'Questrial',sans-serif;font-size:25px;line-height:1.15;margin:0;font-weight:400}
+.crd-meta{font-size:12.5px;opacity:.86;margin:8px 0 0}
+.crd-body{padding:20px 22px 22px;display:flex;flex-direction:column;gap:12px;flex:1}
+.crd-body p{margin:0;font-size:15px;color:#3a3a44;line-height:1.55}
+.crd-kicker{font-size:11px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:#767d8e;margin:0}
+.crd-foot{margin-top:auto;display:flex;align-items:center;gap:12px;flex-wrap:wrap}
+.crd-soon{font-size:13px;color:#767d8e}
+
+/* ---------- curriculum outline ---------- */
+.outline{margin-top:38px;background:#fff;border:1px solid rgba(10,10,10,.1);border-radius:18px;overflow:hidden}
+.outline-head{
+  padding:20px 24px;border-bottom:1px solid rgba(10,10,10,.08);
+  display:flex;align-items:baseline;justify-content:space-between;gap:14px;flex-wrap:wrap;
+}
+.outline-head h3{margin:0;font-family:'Questrial',sans-serif;font-size:22px;font-weight:400}
+.outline-head span{font-size:13px;color:#767d8e}
+details.sec{border-bottom:1px solid rgba(10,10,10,.07)}
+details.sec:last-child{border-bottom:none}
+details.sec>summary{
+  padding:16px 24px;cursor:pointer;display:flex;align-items:center;justify-content:space-between;
+  gap:14px;font-weight:600;font-size:16px;list-style:none;
+}
+details.sec>summary::-webkit-details-marker{display:none}
+details.sec>summary::after{content:'+';font-size:19px;color:#767d8e;font-weight:400}
+details.sec[open]>summary::after{content:'\2212'}
+details.sec>summary:hover{background:#faf9f7}
+.sec-count{font-size:13px;color:#767d8e;font-weight:400;margin-left:auto;margin-right:6px}
+.lsn{display:flex;align-items:center;gap:14px;padding:12px 24px 12px 24px;border-top:1px solid rgba(10,10,10,.05)}
+.lsn-lock{
+  width:26px;height:26px;border-radius:7px;background:#f0eeea;flex-shrink:0;
+  display:flex;align-items:center;justify-content:center;color:#767d8e;
+}
+.lsn-lock svg{width:13px;height:13px}
+.lsn-name{flex:1;min-width:0;font-size:15px}
+.lsn-dur{font-size:13px;color:#767d8e;font-variant-numeric:tabular-nums;flex-shrink:0}
+.outline-note{
+  padding:15px 24px;background:#f6f5f2;font-size:13.5px;color:#4a5060;
+  border-top:1px solid rgba(10,10,10,.07);
+}
+
+/* ---------- schedule ---------- */
+.sched{margin-top:34px;display:flex;flex-direction:column;gap:2px}
+.ev{
+  background:#fff;border:1px solid rgba(10,10,10,.1);padding:20px 22px;
+  display:grid;grid-template-columns:112px minmax(0,1fr) auto;gap:20px;align-items:center;
+}
+.ev+.ev{border-top:none}
+.ev-when{font-size:13.5px;line-height:1.4}
+.ev-when b{display:block;font-size:16px}
+.ev-type{
+  display:inline-block;font-size:10.5px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;
+  padding:4px 9px;border-radius:3px;background:#eef0fe;color:#2333df;margin-bottom:7px;
+}
+.ev-type.is-work{background:#fbf1e4;color:#8a4b08}
+.ev-type.is-hours{background:#e8f3ed;color:#1f6b4a}
+.ev h4{margin:0 0 5px;font-size:17px}
+.ev p{margin:0;font-size:14.5px;color:#4a5060}
+@media (max-width:720px){.ev{grid-template-columns:1fr;gap:12px}}
+</style>
+
+<section id="courses">
+  <div class="wrap">
+    <div class="measure" data-reveal>
+      <p class="eyebrow">Course catalog</p>
+      <h2>Free courses, <em>start any time.</em></h2>
+      <p class="lede">Every course is free and stays free. Work at your own pace, or join a guided cohort so you are not doing it alone. Finish and you hold a Health Matters Clinic completion record.</p>
+    </div>
+
+    <div class="cat">
+      <article class="crd" data-reveal>
+        <div class="crd-art">
+          <span class="crd-badge">Open now</span>
+          <div>
+            <h3>Health Careers Exploration</h3>
+            <p class="crd-meta">8 courses &middot; 24 lessons &middot; about 7 hours</p>
+          </div>
+        </div>
+        <div class="crd-body">
+          <p class="crd-kicker">For ages 14 and up</p>
+          <p>Work out which health career actually fits you, what education and licensing it asks for, how to build experience that counts, and how to pay for it. Ends with a roadmap you keep.</p>
+          <div class="crd-foot">
+            <a class="hmc-btn hmc-btn-primary" href="https://hub.healthmatters.clinic" target="_blank" rel="noopener noreferrer">Enroll free</a>
+            <a class="hmc-btn hmc-btn-secondary" href="#outline">See the lessons</a>
+          </div>
+        </div>
+      </article>
+
+      <article class="crd" data-reveal>
+        <div class="crd-art is-teal">
+          <span class="crd-badge">Open now</span>
+          <div>
+            <h3>Unstoppable Continuing Education</h3>
+            <p class="crd-meta">2 courses &middot; facilitator track</p>
+          </div>
+        </div>
+        <div class="crd-body">
+          <p class="crd-kicker">For professionals and facilitators</p>
+          <p>The Unstoppable curriculum, the one presented to the Los Angeles County Department of Mental Health, as continuing education, plus the preparation needed to deliver it yourself.</p>
+          <div class="crd-foot">
+            <a class="hmc-btn hmc-btn-primary" href="https://hub.healthmatters.clinic" target="_blank" rel="noopener noreferrer">Enroll free</a>
+            <a class="hmc-btn hmc-btn-secondary" href="https://unstoppable.healthmatters.clinic" target="_blank" rel="noopener noreferrer">About Unstoppable</a>
+          </div>
+        </div>
+      </article>
+
+      <article class="crd" data-reveal>
+        <div class="crd-art is-amber">
+          <span class="crd-badge">Outline published</span>
+          <div>
+            <h3>Field-Based Community Health</h3>
+            <p class="crd-meta">Community Health Worker foundations</p>
+          </div>
+        </div>
+        <div class="crd-body">
+          <p class="crd-kicker">For adults entering community health work</p>
+          <p>Care navigation and coverage, outreach, prevention and field-based service. California has no state Community Health Worker certification, so what this leads to is a Health Matters Clinic completion record and documented field hours.</p>
+          <div class="crd-foot">
+            <a class="hmc-btn hmc-btn-primary" href="#schedule">Save my spot</a>
+            <span class="crd-soon">Outline published, lessons being written</span>
+          </div>
+        </div>
+      </article>
+
+      <article class="crd" data-reveal>
+        <div class="crd-art is-slate">
+          <span class="crd-badge">Open now</span>
+          <div>
+            <h3>Youth Mentorship and STEAM</h3>
+            <p class="crd-meta">6 lessons &middot; about 4.5 hours &middot; ages 12 to 26</p>
+          </div>
+        </div>
+        <div class="crd-body">
+          <p class="crd-kicker">For young people and peer leaders</p>
+          <p>The pathway version of the programming we run on school campuses, for young people who want to keep going and eventually facilitate it themselves.</p>
+          <div class="crd-foot">
+            <a class="hmc-btn hmc-btn-primary" href="https://hub.healthmatters.clinic" target="_blank" rel="noopener noreferrer">Enroll free</a>
+            <a class="hmc-btn hmc-btn-secondary" href="https://youth.healthmatters.clinic" target="_blank" rel="noopener noreferrer">Youth programming</a>
+          </div>
+        </div>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- The collapsible outline with locked lessons and an explicit unlock note. Real
+     course titles, real lesson counts and real durations from the Academy
+     catalog, so nobody enrolls against a promise the coursework does not keep. -->
+<section id="outline" style="padding-top:0">
+  <div class="wrap">
+    <div class="measure" data-reveal>
+      <p class="eyebrow">What you actually get</p>
+      <h2>Every lesson, <em>before you enroll.</em></h2>
+      <p class="lede">Health Careers Exploration in full. Open a course to see its lessons and how long each one runs.</p>
+    </div>
+
+    <div class="outline" data-reveal>
+      <div class="outline-head">
+        <h3>Health Careers Exploration</h3>
+        <span>8 courses &middot; 24 lessons &middot; 436 minutes</span>
+      </div>
+
+      <details class="sec" open>
+        <summary>1. The Health Professions Ecosystem <span class="sec-count">7 lessons &middot; 70 min</span></summary>
+        <div class="lsn"><span class="lsn-lock"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><rect x="4" y="11" width="16" height="10" rx="2"/><path d="M8 11V8a4 4 0 0 1 8 0v3"/></svg></span><span class="lsn-name">How care is actually organized</span><span class="lsn-dur">12 min</span></div>
+        <div class="lsn"><span class="lsn-lock"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><rect x="4" y="11" width="16" height="10" rx="2"/><path d="M8 11V8a4 4 0 0 1 8 0v3"/></svg></span><span class="lsn-name">Who does what on a care team</span><span class="lsn-dur">14 min</span></div>
+        <div class="lsn"><span class="lsn-lock"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><rect x="4" y="11" width="16" height="10" rx="2"/><path d="M8 11V8a4 4 0 0 1 8 0v3"/></svg></span><span class="lsn-name">Where community health work sits</span><span class="lsn-dur">11 min</span></div>
+        <div class="lsn"><span class="lsn-lock"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><rect x="4" y="11" width="16" height="10" rx="2"/><path d="M8 11V8a4 4 0 0 1 8 0v3"/></svg></span><span class="lsn-name">Four more lessons in this course</span><span class="lsn-dur">33 min</span></div>
+      </details>
+
+      <details class="sec">
+        <summary>2. Know Yourself: Interests, Values and Work Style <span class="sec-count">6 lessons &middot; 52 min</span></summary>
+        <div class="lsn"><span class="lsn-lock"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><rect x="4" y="11" width="16" height="10" rx="2"/><path d="M8 11V8a4 4 0 0 1 8 0v3"/></svg></span><span class="lsn-name">Structured settings against autonomous ones</span><span class="lsn-dur">9 min</span></div>
+        <div class="lsn"><span class="lsn-lock"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><rect x="4" y="11" width="16" height="10" rx="2"/><path d="M8 11V8a4 4 0 0 1 8 0v3"/></svg></span><span class="lsn-name">Five more lessons in this course</span><span class="lsn-dur">43 min</span></div>
+      </details>
+
+      <details class="sec">
+        <summary>3. Education, Training, Licensure and Credentials <span class="sec-count">6 lessons &middot; 58 min</span></summary>
+        <div class="lsn"><span class="lsn-lock"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><rect x="4" y="11" width="16" height="10" rx="2"/><path d="M8 11V8a4 4 0 0 1 8 0v3"/></svg></span><span class="lsn-name">Verifying a requirement at the source</span><span class="lsn-dur">10 min</span></div>
+        <div class="lsn"><span class="lsn-lock"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><rect x="4" y="11" width="16" height="10" rx="2"/><path d="M8 11V8a4 4 0 0 1 8 0v3"/></svg></span><span class="lsn-name">Five more lessons in this course</span><span class="lsn-dur">48 min</span></div>
+      </details>
+
+      <details class="sec">
+        <summary>4. Building Experience That Actually Teaches You <span class="sec-count">6 lessons &middot; 52 min</span></summary>
+        <div class="lsn"><span class="lsn-lock"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><rect x="4" y="11" width="16" height="10" rx="2"/><path d="M8 11V8a4 4 0 0 1 8 0v3"/></svg></span><span class="lsn-name">Choosing an experience that answers a question</span><span class="lsn-dur">11 min</span></div>
+        <div class="lsn"><span class="lsn-lock"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><rect x="4" y="11" width="16" height="10" rx="2"/><path d="M8 11V8a4 4 0 0 1 8 0v3"/></svg></span><span class="lsn-name">Five more lessons in this course</span><span class="lsn-dur">41 min</span></div>
+      </details>
+
+      <details class="sec">
+        <summary>5. Academic Readiness and Competency Development <span class="sec-count">6 lessons &middot; 54 min</span></summary>
+        <div class="lsn"><span class="lsn-lock"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><rect x="4" y="11" width="16" height="10" rx="2"/><path d="M8 11V8a4 4 0 0 1 8 0v3"/></svg></span><span class="lsn-name">Asking for help as a professional behaviour</span><span class="lsn-dur">10 min</span></div>
+        <div class="lsn"><span class="lsn-lock"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><rect x="4" y="11" width="16" height="10" rx="2"/><path d="M8 11V8a4 4 0 0 1 8 0v3"/></svg></span><span class="lsn-name">Five more lessons in this course</span><span class="lsn-dur">44 min</span></div>
+      </details>
+
+      <details class="sec">
+        <summary>6. Paying for the Path: Financial Aid and Cost Plan <span class="sec-count">6 lessons &middot; 46 min</span></summary>
+        <div class="lsn"><span class="lsn-lock"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><rect x="4" y="11" width="16" height="10" rx="2"/><path d="M8 11V8a4 4 0 0 1 8 0v3"/></svg></span><span class="lsn-name">Grants, loans, scholarships and work study</span><span class="lsn-dur">12 min</span></div>
+        <div class="lsn"><span class="lsn-lock"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><rect x="4" y="11" width="16" height="10" rx="2"/><path d="M8 11V8a4 4 0 0 1 8 0v3"/></svg></span><span class="lsn-name">Five more lessons in this course</span><span class="lsn-dur">34 min</span></div>
+      </details>
+
+      <details class="sec">
+        <summary>7. Professional Communication, Networking and Mentorship <span class="sec-count">6 lessons &middot; 46 min</span></summary>
+        <div class="lsn"><span class="lsn-lock"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><rect x="4" y="11" width="16" height="10" rx="2"/><path d="M8 11V8a4 4 0 0 1 8 0v3"/></svg></span><span class="lsn-name">Asking for fifteen minutes, and what to ask in them</span><span class="lsn-dur">9 min</span></div>
+        <div class="lsn"><span class="lsn-lock"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><rect x="4" y="11" width="16" height="10" rx="2"/><path d="M8 11V8a4 4 0 0 1 8 0v3"/></svg></span><span class="lsn-name">Five more lessons in this course</span><span class="lsn-dur">37 min</span></div>
+      </details>
+
+      <details class="sec">
+        <summary>8. Build Your Personal Health-Career Roadmap <span class="sec-count">4 lessons &middot; 58 min</span></summary>
+        <div class="lsn"><span class="lsn-lock"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><rect x="4" y="11" width="16" height="10" rx="2"/><path d="M8 11V8a4 4 0 0 1 8 0v3"/></svg></span><span class="lsn-name">Your roadmap, scored against the capstone rubric</span><span class="lsn-dur">58 min</span></div>
+      </details>
+
+      <p class="outline-note">Every lesson unlocks immediately after you enroll. Nothing is drip-fed and nothing is held back for a paid tier, because there is no paid tier. To hold the completion record you finish all eight courses, score 80 percent or higher on the post-test, and submit a career roadmap that meets 15 of 20 on the rubric.</p>
+    </div>
+  </div>
+</section>
+
+<!-- Cohort and event schedule, typed the way Erica's reference did it. Dates are
+     deliberately not invented: the schedule is driven by real events tagged with
+     an Academy course id in the portal, and until a coordinator schedules them
+     this section says so rather than printing a date nobody has committed to. -->
+<section id="schedule" style="padding-top:0">
+  <div class="wrap">
+    <div class="measure" data-reveal>
+      <p class="eyebrow">Cohorts and sessions</p>
+      <h2>Learn alongside <em>other people.</em></h2>
+      <p class="lede">Courses are self-paced, but a guided start means a real date, a group starting with you, and someone to ask. Saving a spot takes an email address and nothing else.</p>
+    </div>
+
+    <div class="sched" data-reveal>
+      <div class="ev">
+        <div class="ev-when"><b>Autumn 2027</b>Dates being set</div>
+        <div>
+          <span class="ev-type">Guided cohort</span>
+          <h4>Health Careers Exploration</h4>
+          <p>Eight courses over several weeks with a group, rather than alone. Open to ages 14 and up.</p>
+        </div>
+        <a class="hmc-btn hmc-btn-primary" href="https://hub.healthmatters.clinic" target="_blank" rel="noopener noreferrer">Save my spot</a>
+      </div>
+
+      <div class="ev">
+        <div class="ev-when"><b>Autumn 2027</b>Dates being set</div>
+        <div>
+          <span class="ev-type is-work">Facilitator training</span>
+          <h4>Unstoppable facilitator preparation</h4>
+          <p>For people who will deliver Unstoppable programming in their own community or organisation.</p>
+        </div>
+        <a class="hmc-btn hmc-btn-primary" href="https://hub.healthmatters.clinic" target="_blank" rel="noopener noreferrer">Save my spot</a>
+      </div>
+
+      <div class="ev">
+        <div class="ev-when"><b>Monthly</b>Ongoing</div>
+        <div>
+          <span class="ev-type is-hours">Open session</span>
+          <h4>Ask us anything about a health career</h4>
+          <p>Bring a question about school, licensing, cost or getting hired. No enrollment needed to attend.</p>
+        </div>
+        <a class="hmc-btn hmc-btn-secondary" href="https://eventfinder.healthmatters.clinic" target="_blank" rel="noopener noreferrer">Find the next one</a>
+      </div>
+    </div>
+
+    <p style="margin-top:20px;font-size:14.5px;color:#4a5060;max-width:66ch">Saving a spot does not create an account or commit you to anything. We hold the place, send one reminder before it starts, and you decide then.</p>
+  </div>
+</section>
+
+<!-- Unboxed. Real recorded episodes, and the best-looking asset available here. -->
+<section id="unboxed" style="padding-top:0">
+  <div class="wrap">
+    <div class="measure" data-reveal>
+      <p class="eyebrow">Unboxed, the series</p>
+      <h2>There is more than <em>one way to be well.</em></h2>
+      <p class="lede">Each episode takes on a different dimension of wellness. Mental health, emotional resilience, financial stability, spiritual care. Real stories from Black and Latino communities, from men, mothers, caretakers and entrepreneurs.</p>
+    </div>
+    <div class="cta-row" style="margin-top:26px" data-reveal>
+      <a class="hmc-btn hmc-btn-primary" href="https://www.healthmatters.clinic/unboxed" target="_blank" rel="noopener noreferrer">Watch the series</a>
+      <a class="hmc-btn hmc-btn-secondary" href="https://www.healthmatters.clinic/contact-us" target="_blank" rel="noopener noreferrer">Be a guest</a>
+    </div>
+  </div>
+</section>
+
+<!-- Research. The third thing an education page should carry alongside the courses
+     and the series: the work itself. Every report linked here is a real published
+     file on the program site that produced it, so the link is the evidence rather
+     than a claim about it. Nothing is listed that does not resolve. -->
+<section id="research" style="padding-top:0">
+  <div class="wrap">
+    <div class="measure" data-reveal>
+      <p class="eyebrow">Research and reports</p>
+      <h2>What we found, <em>written down.</em></h2>
+      <p class="lede">We publish what our own programs learn. These are the reports behind the curriculum, free to read and free to cite.</p>
+    </div>
+
+    <div class="cat" style="margin-top:30px">
+      <article class="crd" data-reveal>
+        <div class="crd-body">
+          <p class="crd-kicker">February 2025 &middot; 21 pages</p>
+          <h3 style="margin:6px 0 8px">Healthcare Access on Skid Row</h3>
+          <p>A survey of healthcare access among people living on Skid Row: what coverage they hold, what stops them using it, and where care breaks down. Reviewed as exempt by the UCLA Institutional Review Board.</p>
+          <div class="crd-foot">
+            <a class="hmc-btn hmc-btn-primary" href="https://smo.healthmatters.clinic/reports/HMC-Skid-Row-Healthcare-Access-Report-Feb2025.pdf" target="_blank" rel="noopener noreferrer">Read the report</a>
+          </div>
+        </div>
+      </article>
+      <article class="crd" data-reveal>
+        <div class="crd-body">
+          <p class="crd-kicker">2024 &middot; Street medicine</p>
+          <h3 style="margin:6px 0 8px">OraQuick HIV Self-Test Distribution</h3>
+          <p>What happened when we put HIV self-tests directly into people’s hands during street outreach, and what that says about the kind of testing people will actually do.</p>
+          <div class="crd-foot">
+            <a class="hmc-btn hmc-btn-primary" href="https://smo.healthmatters.clinic/reports/HMC-OraQuick-HIV-Self-Test-Distribution-2024.pdf" target="_blank" rel="noopener noreferrer">Read the report</a>
+          </div>
+        </div>
+      </article>
+      <article class="crd" data-reveal>
+        <div class="crd-body">
+          <p class="crd-kicker">January 2025 &middot; Disaster response</p>
+          <h3 style="margin:6px 0 8px">LA Wildfire Relief Response</h3>
+          <p>How a community health organization stood up wildfire relief, what reached people fastest, and what we would do differently next time.</p>
+          <div class="crd-foot">
+            <a class="hmc-btn hmc-btn-primary" href="https://relief.healthmatters.clinic/reports/HMC-LA-Wildfire-Relief-Response-Jan2025.pdf" target="_blank" rel="noopener noreferrer">Read the report</a>
+          </div>
+        </div>
+      </article>
+      <article class="crd" data-reveal>
+        <div class="crd-body">
+          <p class="crd-kicker">Unstoppable &middot; Final report</p>
+          <h3 style="margin:6px 0 8px">The Unstoppable Workshop</h3>
+          <p>The curriculum presented to the Los Angeles County Department of Mental Health, with what the workshops produced and how participants responded.</p>
+          <div class="crd-foot">
+            <a class="hmc-btn hmc-btn-primary" href="https://unstoppable.healthmatters.clinic/the-unstoppable-final-report.pdf" target="_blank" rel="noopener noreferrer">Read the report</a>
+          </div>
+        </div>
+      </article>
+      <article class="crd" data-reveal>
+        <div class="crd-body">
+          <p class="crd-kicker">Unstoppable &middot; Companion guide</p>
+          <h3 style="margin:6px 0 8px">Digital Companion Guide</h3>
+          <p>The workbook that runs alongside the Unstoppable curriculum, for facilitators delivering it and for participants working through it.</p>
+          <div class="crd-foot">
+            <a class="hmc-btn hmc-btn-primary" href="https://unstoppable.healthmatters.clinic/the-unstoppable-workshop-digital-companion-guide.pdf" target="_blank" rel="noopener noreferrer">Open the guide</a>
+          </div>
+        </div>
+      </article>
+    </div>
+
+    <p class="crd-soon" style="margin-top:22px">Citing this work in a grant application or a paper is welcome and needs no permission. For the underlying instrument or method, email contact@healthmatters.clinic.</p>
+  </div>
+</section>
+
+<!-- Honest close. States what the credential is and is not, because the CHW
+     claim is the one most easily overstated and California has no state
+     certification to point at. -->
+<section id="credential" style="padding-top:0">
+  <div class="wrap">
+    <div class="measure" data-reveal>
+      <p class="eyebrow">What you hold at the end</p>
+      <h2>A record that <em>says what you did.</em></h2>
+      <p>Finish a pathway and Health Matters Clinic issues a completion record naming the pathway, the coursework, the assessment you passed and the date. Where you served in the field, the hours are on it.</p>
+      <p>Being straight about what it is not: California does not have a state Community Health Worker certification, and the Department of Health Care Services does not approve certificates. Nobody can issue you one, including us. What an HMC completion record does is document real coursework and real hours to an employer or a program, which is what most of them ask for.</p>
+    </div>
+  </div>
+</section>
+</main>
+
+<footer class="sitefoot">
+  <div class="wrap foot-inner">
+    <div class="faq-head">
+      <h3 class="faq-title">Questions</h3>
+      <p class="faq-intro">What learners ask before they enroll.</p>
+    </div>
+    <div class="faq-groups">
+      <div class="faq-group">
+        <h5>Cost and access</h5>
+        <details class="faq-item"><summary>Is it really free?</summary><div class="faq-answer">
+          <p>Yes, and it stays free. There is no paid tier, no certificate fee and no upgrade. Every community-facing Health Matters Clinic service is free.</p>
+          <p>Free to receive is not free to run. Course production, staffing and materials are paid for by sponsors, grants and donors.</p>
+        </div></details>
+        <details class="faq-item"><summary>Do I need an account?</summary><div class="faq-answer">
+          <p>To take a course, yes, because your progress and completion record have to attach to someone. To save a spot in a cohort, no. That takes an email address and creates nothing.</p>
+        </div></details>
+        <details class="faq-item"><summary>Who can enroll?</summary><div class="faq-answer">
+          <p>Anyone. Health Careers Exploration is written for ages 14 and up. The youth pathway is for ages 12 to 26. The professional and facilitator tracks are open to anyone already working in or entering community health.</p>
+        </div></details>
+      </div>
+      <div class="faq-group">
+        <h5>Courses and credentials</h5>
+        <details class="faq-item"><summary>What do I get at the end?</summary><div class="faq-answer">
+          <p>A Health Matters Clinic completion record naming the pathway, the coursework, the assessment you passed and the date. Where you served in the field, the hours are on it.</p>
+        </div></details>
+        <details class="faq-item"><summary>Does this certify me as a Community Health Worker?</summary><div class="faq-answer">
+          <p>No, and be careful of anyone who says theirs does. California has no state Community Health Worker certification, and the Department of Health Care Services does not approve certificates. What an HMC completion record does is document real coursework and real hours, which is what employers and programs generally ask to see.</p>
+        </div></details>
+        <details class="faq-item"><summary>How long does a pathway take?</summary><div class="faq-answer">
+          <p>Health Careers Exploration is eight courses, 24 lessons and about seven hours of content. Self-paced means you set the pace; a guided cohort spreads it across several weeks with a group.</p>
+        </div></details>
+        <details class="faq-item"><summary>Why do some courses say in curriculum review?</summary><div class="faq-answer">
+          <p>Because they are not finished, and we would rather say so than list them as available. When a course is open it says open, and every lesson unlocks the moment you enroll.</p>
+        </div></details>
+      </div>
+      <div class="faq-group">
+        <h5>Bringing this to your group</h5>
+        <details class="faq-item"><summary>Can you train our staff or members?</summary><div class="faq-answer">
+          <p>Yes. The Unstoppable curriculum has been delivered to community groups and presented to the Los Angeles County Department of Mental Health, and the facilitator track exists so your own people can deliver it.</p>
+          <p>Start at <a href="https://www.healthmatters.clinic/contact-us">healthmatters.clinic/contact-us</a>.</p>
+        </div></details>
+        <details class="faq-item"><summary>Do you offer continuing education credit?</summary><div class="faq-answer">
+          <p>Continuing education sessions are scheduled through the portal and the boards they are approved for are named on each session. Where a session carries no approval, it says so.</p>
+        </div></details>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script src="./assets/js/vendor/gsap.min.js"></script>
+<script src="./assets/js/vendor/ScrollTrigger.min.js"></script>
+<script src="./assets/js/vendor/lenis.min.js"></script>
+<script src="./assets/js/hmc-immersive.js"></script>
+<script src="./assets/site/hmc-buttons-1.0.5.js"></script>
+</body>
+</html>

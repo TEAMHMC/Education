@@ -1,0 +1,82 @@
+/* HMC shared button system. v1.0.5
+
+   1.0.5 removes the hover roll-up. Versions 1.0.0 through 1.0.4 reimplemented
+   the main site's Webflow roll-up as an overlay pseudo-element carrying a copy
+   of the label, positioned by a script that measured where the label started.
+   That measurement was wrong on any button whose first child is the label
+   itself rather than an icon, which is most of them: the overlay was pushed to
+   the far right of the button, where its copy of the label wrapped a letter at
+   a time and spilled outside the pill. On the versions still serving the React
+   apps the overlay also covered the dot for the length of the hover, so the dot
+   read as missing. Both symptoms had one cause, and the effect is not worth the
+   fragility, so the overlay is gone: no ::after, no label copy, no measuring.
+
+   What is left is the button itself, which was never the problem: the pill, the
+   fill, the 6px dot, and a hover that changes nothing but brightness. Brightness
+   rather than a background colour because several callers set their own fill
+   with an inline style, which a stylesheet rule cannot repaint, and a hover that
+   works on some buttons and not others is how this started.
+
+   1.0.0 to 1.0.4 are left on disk untouched, because pages not yet republished
+   are still linked to them. Pair with hmc-buttons-1.0.5.js, whose only remaining
+   job is to keep markup that ships its own dot from drawing a second one. */
+
+.hmc-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 14px;
+  padding: 12px 22px;
+  border-radius: 100px;
+  border: 1px solid #0f0f0f;
+  font-size: 16px;
+  line-height: 1.2em;
+  font-weight: 400;
+  text-transform: capitalize;
+  text-decoration: none;
+  cursor: pointer;
+  position: relative;
+  transition-duration: .3s;
+  /* The pill cannot grow wider than the card, grid cell or form column holding
+     it. A label with nowhere left to go wraps inside the pill rather than being
+     held on one line and cut off, which is what a long label in a narrow card
+     used to do: the button stayed the right width and the words went missing.
+     overflow-wrap covers the one case wrapping cannot, a single word longer
+     than the button, and overflow keeps anything at all from leaving the pill. */
+  max-width: 100%;
+  text-align: center;
+  overflow-wrap: anywhere;
+  overflow: hidden;
+}
+
+.hmc-btn-primary { background: #2333df; color: #fff; }
+.hmc-btn-secondary { background: #fff; color: #1a1a1a; }
+
+/* 6px dot, drawn in CSS so no child node is added to React-owned markup.
+   currentColor gives a white dot on the primary fill and a dark one on the
+   secondary. Opt out per button with data-hmc-dot="off" (icon-led buttons). */
+.hmc-btn:not([data-hmc-dot="off"])::before {
+  content: "";
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: currentColor;
+  flex-shrink: 0;
+}
+/* Markup that ships its own dot element keeps working. */
+.hmc-btn-dot { width: 6px; height: 6px; border-radius: 50%; flex-shrink: 0; }
+.hmc-btn-primary .hmc-btn-dot { background: #fff; }
+.hmc-btn-secondary .hmc-btn-dot { background: #0f0f0f; }
+.hmc-btn[data-hmc-dot="off"]::before { display: none; }
+
+/* Hover. Brightness only, so it lands the same way on the standard fills and on
+   buttons carrying an inline background colour, and moves nothing on the page.
+   The colour rules hold the label legible against hosts that ship a global
+   `a:hover { color: ... }`. */
+.hmc-btn:hover { filter: brightness(.92); }
+.hmc-btn-primary:hover { color: #fff; opacity: 1; }
+.hmc-btn-secondary:hover { color: #1a1a1a; opacity: 1; }
+.hmc-btn:active { filter: brightness(.86); }
+
+@media (prefers-reduced-motion: reduce) {
+  .hmc-btn { transition-duration: 0s; }
+}
