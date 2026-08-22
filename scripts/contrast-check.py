@@ -75,6 +75,34 @@ for grp, body in re.findall(r'([^{}]+)\{([^{}]*)\}', css):
         c, b = decl.get(cls, (None, None))
         decl[cls] = (col.group(1).strip() if col else c, bg.group(1).strip() if bg else b)
 
+# cls -> True when some compound selector containing .cls sets a colour ON the
+# element itself (the selector's last simple part is .cls).
+self_colored = {}
+# cls -> {descendant tags/classes that a ".cls X { color: ... }" rule colours}
+descendant_colored = {}
+
+for grp, body in re.findall(r'([^{}]+)\{([^{}]*)\}', css):
+    if not re.search(r'(?:^|;)\s*color\s*:', body):
+        continue
+    for sel in grp.split(','):
+        sel = sel.strip()
+        if not sel or '>' in sel:
+            continue
+        parts = sel.split()
+        last = parts[-1]
+        # ".dark-sec .ranked" or ".ranked.pop": the element itself gets a colour.
+        m = re.fullmatch(r'((?:\.[A-Za-z][\w-]*)+)', last)
+        if m and len(parts) >= 1:
+            for cls in re.findall(r'\.([A-Za-z][\w-]*)', last):
+                self_colored[cls] = True
+        # ".slist ul" / ".share-portrait .lbl": a named descendant gets a colour.
+        if len(parts) >= 2:
+            owner = parts[-2]
+            for cls in re.findall(r'\.([A-Za-z][\w-]*)', owner):
+                key = last.lstrip('.').lower()
+                if re.fullmatch(r'[\w-]+', key):
+                    descendant_colored.setdefault(cls, set()).add(key)
+
 VOID = {'br', 'hr', 'img', 'input', 'meta', 'link', 'source'}
 
 
@@ -95,14 +123,18 @@ class Walker(HTMLParser):
 
     def __init__(self):
         super().__init__(convert_charrefs=True)
-        # (tag, classes, inherited_color_luminance, background_luminance, suspicion, child_declared_color)
-        self.stack = [['root', set(), 0.05, 0.96, None, False]]
+        # (tag, classes, inherited_color_luminance, background_luminance, suspicion, child_declared_color, has_text)
+        # index 7: tags and class names present inside this element
+        self.stack = [['root', set(), 0.05, 0.96, None, False, False, set()]]
         self.findings = []
 
     def handle_starttag(self, tag, attrs):
         d = dict(attrs)
         classes = set((d.get('class') or '').split())
         parent = self.stack[-1]
+        for frame in self.stack:
+            frame[7].add(tag.lower())
+            frame[7].update(c.lower() for c in classes)
         _t, _c, col, bg = parent[0], parent[1], parent[2], parent[3]
         newcol, newbg = col, bg
         declared_color = False
@@ -137,14 +169,31 @@ class Walker(HTMLParser):
                 frame[5] = True
 
         if tag not in VOID:
-            self.stack.append([tag, classes, newcol, newbg, suspicion, False])
+            self.stack.append([tag, classes, newcol, newbg, suspicion, False, False, set()])
+
+    def handle_data(self, data):
+        if data.strip():
+            for frame in self.stack:
+                frame[6] = True
 
     def handle_endtag(self, tag):
         for i in range(len(self.stack) - 1, 0, -1):
             if self.stack[i][0] == tag:
                 frame = self.stack[i]
-                if frame[4] and not frame[5]:
-                    self.findings.append(frame[4])
+                # frame[6]: an element with no words in it cannot have invisible
+                # text. Carousel slides and decorative dots paint a background and
+                # contain nothing, and reporting them buried the real findings.
+                if frame[4] and not frame[5] and frame[6]:
+                    cls = frame[4][1:frame[4].index(' ')]
+                    # Cleared if a compound rule colours the element itself, or if
+                    # a ".cls X { color }" rule names a descendant that is actually
+                    # present. Presence is the whole point: ".slist ul" exists, but
+                    # the broken markup had paragraphs, so nothing was coloured.
+                    rescued = self_colored.get(cls, False) or bool(
+                        descendant_colored.get(cls, set()) & frame[7]
+                    )
+                    if not rescued:
+                        self.findings.append(frame[4])
                 del self.stack[i:]
                 return
 
