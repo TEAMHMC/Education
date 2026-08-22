@@ -3,13 +3,13 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
-<title>Education + Training | Health Matters Clinic</title>
-<meta name="description" content="Courses, training, the UNBOXED series, articles and published research from Health Matters Clinic. Learn about health, build practical skills, explore a career, and understand the issues affecting our communities.">
+<title>Education and Training | Health Matters Clinic</title>
+<meta name="description" content="Free health career courses, Community Health Worker training, Unstoppable facilitator training and the Unboxed series. Self-paced, culturally rooted, and open to anyone in Los Angeles.">
 <link rel="canonical" href="https://education.healthmatters.clinic/">
 
 <meta property="og:type" content="website">
-<meta property="og:title" content="Education + Training | Health Matters Clinic">
-<meta property="og:description" content="Learn with us. Courses, training, UNBOXED, articles and research from Health Matters Clinic, a Los Angeles nonprofit working on health equity.">
+<meta property="og:title" content="Education and Training | Health Matters Clinic">
+<meta property="og:description" content="Free, self-paced courses and guided cohorts from Health Matters Clinic. Health careers, community health work, facilitator training and the Unboxed series.">
 <meta property="og:url" content="https://education.healthmatters.clinic/">
 <meta name="twitter:card" content="summary">
 
@@ -207,36 +207,6 @@ p{margin:0 0 18px}
 
 footer{background:var(--hmc-text);color:rgba(255,255,255,.64);padding:44px 0;font-size:.87rem}
 footer a{color:var(--hmc-accent)}
-/* ===================== CARDS =====================
-   Was a body-level style block attached to the old course catalog. The catalog
-   is gone; the cards remain as the five doors on this page, so the rules moved
-   up here rather than leaving the markup unstyled. */
-/* ---------- catalog ---------- */
-.cat{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:22px;margin-top:34px}
-.crd{
-  background:#fff;border:1px solid rgba(10,10,10,.1);border-radius:18px;overflow:hidden;
-  display:flex;flex-direction:column;transition:border-color .25s ease,transform .25s ease;
-}
-.crd:hover{border-color:rgba(35,51,223,.4);transform:translateY(-3px)}
-.crd-art{
-  aspect-ratio:16/9;padding:22px;display:flex;flex-direction:column;justify-content:space-between;
-  background:linear-gradient(140deg,#1b1f5c,#2333df 58%,#3a2a7a);color:#fff;position:relative;
-}
-.crd-art.is-teal{background:linear-gradient(140deg,#0f3b34,#12715f 58%,#1b8f6a)}
-.crd-art.is-amber{background:linear-gradient(140deg,#4a2c0a,#a4620d 58%,#d08a1a)}
-.crd-art.is-slate{background:linear-gradient(140deg,#26262b,#43434d 58%,#5b5b68)}
-.crd-badge{
-  align-self:flex-start;font-size:11px;font-weight:700;letter-spacing:.06em;
-  background:rgba(255,255,255,.92);color:#0a0a0a;padding:5px 11px;border-radius:100px;
-}
-.crd-art h3{font-family:'Questrial',sans-serif;font-size:25px;line-height:1.15;margin:0;font-weight:400}
-.crd-meta{font-size:12.5px;opacity:.86;margin:8px 0 0}
-.crd-body{padding:20px 22px 22px;display:flex;flex-direction:column;gap:12px;flex:1}
-.crd-body p{margin:0;font-size:15px;color:#3a3a44;line-height:1.55}
-.crd-kicker{font-size:11px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:#767d8e;margin:0}
-.crd-foot{margin-top:auto;display:flex;align-items:center;gap:12px;flex-wrap:wrap}
-.crd-soon{font-size:13px;color:#767d8e}
-
 .skip{position:absolute;left:-9999px}
 .skip:focus{left:20px;top:20px;z-index:99;background:#fff;color:#0a0a0a;padding:12px 18px;border-radius:999px}
 </style></head>
@@ -244,12 +214,7 @@ footer a{color:var(--hmc-accent)}
 <a class="skip" href="#main">Skip to content</a>
 
 <!-- ===================== HERO =====================
-     Copy on this page is Erica's, used as written. The previous version of this
-     page was a second copy of the Member Hub course catalog and asserted that
-     everything is free and stays free, which is not true: not all HMC programming
-     will be free. Every claim of that kind is gone, along with the catalog. What
-     this page does now is say what kinds of education exist here and send people
-     to the place that holds each one.
+     Copy on this page is Erica's, used as written.
      ================================================ -->
 <header class="hero hmc-parallax-hero">
   <div class="hero-field" aria-hidden="true"></div>
@@ -278,18 +243,23 @@ footer a{color:var(--hmc-accent)}
     <div class="measure" data-reveal>
       <p class="lede">At Health Matters Clinic, we create opportunities to learn about health, build practical skills, explore new interests and careers, have honest conversations, and better understand the issues affecting our communities.</p>
       <p>From courses and training to podcasts, articles, and research, you'll find information and resources to support your health and well-being, build your knowledge, and help you care for yourself and others.</p>
-      <p class="statement">Learn with us. Grow with us. Help us create healthier communities.</p>
     </div>
   </div>
 </section>
 
+<!-- The blue pull-quote block, used as the stylesheet intends: a full-bleed
+     panel wrapping one line, not a class dropped onto a paragraph. -->
+<div class="block statement" data-reveal>
+  <p>Learn with us. Grow with us. Help us create healthier communities.</p>
+</div>
+
 <!-- ===================== FIND WHAT YOU'RE LOOKING FOR =====================
      Five kinds of education, each a door rather than a description. This is the
-     section the page exists for: somebody arriving does not know whether what they
-     want is a course, a training, an episode, an article or a report, and naming
-     the five is faster than explaining any one of them.
+     section the page exists for: somebody arriving does not know whether what
+     they want is a course, a training, an episode, an article or a report, and
+     naming the five is faster than explaining any one of them.
      ======================================================================== -->
-<section id="find" style="padding-top:0">
+<section id="find">
   <div class="wrap">
     <div class="measure" data-reveal>
       <p class="eyebrow">Find what you're looking for</p>
@@ -297,80 +267,40 @@ footer a{color:var(--hmc-accent)}
       <p class="lede">You might be here to learn something new, find support for your well-being, explore a career, build a skill, or simply understand an issue a little better.</p>
     </div>
 
-    <div class="cat">
-      <article class="crd" data-reveal>
-        <div class="crd-art">
-          <div>
-            <h3>Courses</h3>
-            <p class="crd-meta">Self-paced</p>
-          </div>
-        </div>
-        <div class="crd-body">
-          <p>Learn at your own pace with courses covering health, wellness, community health, careers, and more.</p>
-          <div class="crd-foot">
-            <a class="hmc-btn hmc-btn-primary" href="#courses">Explore Courses</a>
-          </div>
-        </div>
+    <div class="involve">
+      <article class="icard" data-reveal>
+        <span class="tag">Courses</span>
+        <h3>Learn at your own pace</h3>
+        <p>Learn at your own pace with courses covering health, wellness, community health, careers, and more.</p>
+        <div class="cta-row" style="margin-top:0"><a class="hmc-btn hmc-btn-primary" href="#courses">Explore Courses</a></div>
       </article>
 
-      <article class="crd" data-reveal>
-        <div class="crd-art is-teal">
-          <div>
-            <h3>Training</h3>
-            <p class="crd-meta">For people and teams</p>
-          </div>
-        </div>
-        <div class="crd-body">
-          <p>Build practical skills through HMC training, workshops, and professional learning experiences. Looking for training for your team or organization? We can help with that too.</p>
-          <div class="crd-foot">
-            <a class="hmc-btn hmc-btn-primary" href="#training">Explore Training</a>
-          </div>
-        </div>
+      <article class="icard" data-reveal>
+        <span class="tag">Training</span>
+        <h3>Build practical skills</h3>
+        <p>Build practical skills through HMC training, workshops, and professional learning experiences. Looking for training for your team or organization? We can help with that too.</p>
+        <div class="cta-row" style="margin-top:0"><a class="hmc-btn hmc-btn-primary" href="#training">Explore Training</a></div>
       </article>
 
-      <article class="crd" data-reveal>
-        <div class="crd-art is-amber">
-          <div>
-            <h3>UNBOXED</h3>
-            <p class="crd-meta">Podcast and video series</p>
-          </div>
-        </div>
-        <div class="crd-body">
-          <p>Real conversations about health and wellness, including the parts of life that don't always get talked about.</p>
-          <div class="crd-foot">
-            <a class="hmc-btn hmc-btn-primary" href="https://www.healthmatters.clinic/unboxed" target="_blank" rel="noopener noreferrer">Watch + Listen</a>
-          </div>
-        </div>
+      <article class="icard" data-reveal>
+        <span class="tag">UNBOXED</span>
+        <h3>Listen to the conversation</h3>
+        <p>Real conversations about health and wellness, including the parts of life that don't always get talked about.</p>
+        <div class="cta-row" style="margin-top:0"><a class="hmc-btn hmc-btn-primary" href="https://www.healthmatters.clinic/unboxed" target="_blank" rel="noopener noreferrer">Watch + Listen</a></div>
       </article>
 
-      <article class="crd" data-reveal>
-        <div class="crd-art is-slate">
-          <div>
-            <h3>Articles + Stories</h3>
-            <p class="crd-meta">Reading</p>
-          </div>
-        </div>
-        <div class="crd-body">
-          <p>Read about health, well-being, community, and the ideas and experiences shaping our work.</p>
-          <div class="crd-foot">
-            <a class="hmc-btn hmc-btn-primary" href="https://www.healthmatters.clinic/blog" target="_blank" rel="noopener noreferrer">Read the Latest</a>
-          </div>
-        </div>
+      <article class="icard" data-reveal>
+        <span class="tag">Articles + Stories</span>
+        <h3>Read something worth your time</h3>
+        <p>Read about health, well-being, community, and the ideas and experiences shaping our work.</p>
+        <div class="cta-row" style="margin-top:0"><a class="hmc-btn hmc-btn-primary" href="https://www.healthmatters.clinic/blog" target="_blank" rel="noopener noreferrer">Read the Latest</a></div>
       </article>
 
-      <article class="crd" data-reveal>
-        <div class="crd-art">
-          <div>
-            <h3>Research + Reports</h3>
-            <p class="crd-meta">Published work</p>
-          </div>
-        </div>
-        <div class="crd-body">
-          <p>See what we're learning through our programs, community work, and research.</p>
-          <div class="crd-foot">
-            <a class="hmc-btn hmc-btn-primary" href="#research">Explore Research</a>
-          </div>
-        </div>
+      <article class="icard" data-reveal>
+        <span class="tag">Research + Reports</span>
+        <h3>See the work itself</h3>
+        <p>See what we're learning through our programs, community work, and research.</p>
+        <div class="cta-row" style="margin-top:0"><a class="hmc-btn hmc-btn-primary" href="#research">Explore Research</a></div>
       </article>
     </div>
   </div>
@@ -386,13 +316,35 @@ footer a{color:var(--hmc-accent)}
       <p>You may be exploring something for yourself, building skills for work, preparing for a career, or looking for information you can share with someone you care about.</p>
       <p>That's why you'll find different ways to learn here.</p>
     </div>
-    <div class="slist" data-reveal>
-      <p><b>Take a course.</b></p>
-      <p><b>Listen to a conversation.</b></p>
-      <p><b>Read an article.</b></p>
-      <p><b>Explore the research.</b></p>
-      <p><b>Join a training.</b></p>
+
+    <div class="steps" data-reveal>
+      <div class="step">
+        <span class="when">Courses</span>
+        <h3>Take a course.</h3>
+        <p>Work through something properly, at whatever pace your week allows.</p>
+      </div>
+      <div class="step">
+        <span class="when">UNBOXED</span>
+        <h3>Listen to a conversation.</h3>
+        <p>Hear people talk honestly about the parts of life that shape their health.</p>
+      </div>
+      <div class="step">
+        <span class="when">Articles</span>
+        <h3>Read an article.</h3>
+        <p>Short enough for a break, useful enough to pass on to somebody else.</p>
+      </div>
+      <div class="step">
+        <span class="when">Research</span>
+        <h3>Explore the research.</h3>
+        <p>Read what our own programs found, in the reports themselves.</p>
+      </div>
+      <div class="step">
+        <span class="when">Training</span>
+        <h3>Join a training.</h3>
+        <p>Learn with other people, led by people, around the skills your work needs.</p>
+      </div>
     </div>
+
     <p class="note" data-reveal>Find what works for you.</p>
   </div>
 </section>
@@ -401,18 +353,30 @@ footer a{color:var(--hmc-accent)}
      No catalog here. Course detail lives in the Member Hub, which is the system
      that actually knows what is open, what a course contains and what it costs.
      Restating any of that on a marketing page guarantees the two disagree, which
-     is how the previous version came to describe courses as free.
+     is how the previous version came to describe every course as free.
      ======================================================================== -->
 <section id="courses">
   <div class="wrap">
-    <div class="measure" data-reveal>
-      <p class="eyebrow">Courses + learning programs</p>
-      <h2>Learn something <em>you can use.</em></h2>
-      <p class="lede">Our courses and learning programs cover health, wellness, community health, health careers, and other topics connected to our work.</p>
-      <p>Some are designed to help you explore a new area. Others help you build practical skills or continue developing professionally.</p>
-      <p>Courses and program details, including what's included and how to get started, are available through the HMC Hub.</p>
-      <div class="cta-row" style="margin-top:26px">
-        <a class="hmc-btn hmc-btn-primary" href="https://hub.healthmatters.clinic" target="_blank" rel="noopener noreferrer">Explore Courses on the HMC Hub</a>
+    <div class="twoup">
+      <div data-reveal>
+        <p class="eyebrow">Courses + learning programs</p>
+        <h2>Learn something <em>you can use.</em></h2>
+        <p class="lede">Our courses and learning programs cover health, wellness, community health, health careers, and other topics connected to our work.</p>
+        <p>Some are designed to help you explore a new area. Others help you build practical skills or continue developing professionally.</p>
+        <p>Courses and program details, including what's included and how to get started, are available through the HMC Hub.</p>
+        <div class="cta-row" style="margin-top:26px">
+          <a class="hmc-btn hmc-btn-primary" href="https://hub.healthmatters.clinic" target="_blank" rel="noopener noreferrer">Explore Courses on the HMC Hub</a>
+        </div>
+      </div>
+      <div class="slist" data-reveal>
+        <h3>What the courses cover</h3>
+        <ul>
+          <li>Health and wellness</li>
+          <li>Community health</li>
+          <li>Health careers and what each one asks for</li>
+          <li>Practical skills you can use straight away</li>
+          <li>Continuing professional development</li>
+        </ul>
       </div>
     </div>
   </div>
@@ -421,15 +385,27 @@ footer a{color:var(--hmc-accent)}
 <!-- ===================== TRAINING ===================== -->
 <section id="training" style="padding-top:0">
   <div class="wrap">
-    <div class="measure" data-reveal>
-      <p class="eyebrow">Training</p>
-      <h2>Bring learning <em>to your work.</em></h2>
-      <p class="lede">HMC provides training for professionals, organizations, community groups, and others who want to build their knowledge and skills.</p>
-      <p>Our training grows out of the work we do in communities. Topics may include community health, mental wellness, health education, facilitation, workforce development, and other areas connected to our programs.</p>
-      <p>Looking for something specific? Tell us what you're working on and who you're trying to reach.</p>
-      <div class="cta-row" style="margin-top:26px">
-        <a class="hmc-btn hmc-btn-primary" href="https://hub.healthmatters.clinic" target="_blank" rel="noopener noreferrer">Explore Training</a>
-        <a class="hmc-btn hmc-btn-secondary" href="https://www.healthmatters.clinic/contact-us" target="_blank" rel="noopener noreferrer">Talk With Us</a>
+    <div class="twoup">
+      <div data-reveal>
+        <p class="eyebrow">Training</p>
+        <h2>Bring learning <em>to your work.</em></h2>
+        <p class="lede">HMC provides training for professionals, organizations, community groups, and others who want to build their knowledge and skills.</p>
+        <p>Our training grows out of the work we do in communities. Topics may include community health, mental wellness, health education, facilitation, workforce development, and other areas connected to our programs.</p>
+        <p>Looking for something specific? Tell us what you're working on and who you're trying to reach.</p>
+        <div class="cta-row" style="margin-top:26px">
+          <a class="hmc-btn hmc-btn-primary" href="https://hub.healthmatters.clinic" target="_blank" rel="noopener noreferrer">Explore Training</a>
+          <a class="hmc-btn hmc-btn-secondary" href="https://www.healthmatters.clinic/contact-us" target="_blank" rel="noopener noreferrer">Talk With Us</a>
+        </div>
+      </div>
+      <div class="slist" data-reveal>
+        <h3>Topics may include</h3>
+        <ul>
+          <li>Community health</li>
+          <li>Mental wellness</li>
+          <li>Health education</li>
+          <li>Facilitation</li>
+          <li>Workforce development</li>
+        </ul>
       </div>
     </div>
   </div>
@@ -467,8 +443,8 @@ footer a{color:var(--hmc-accent)}
 </section>
 
 <!-- ===================== RESEARCH + REPORTS =====================
-     The reports below are real published files on the program site that produced
-     each one, so the link is the evidence rather than a claim about it. Nothing is
+     Every report below is a real published file on the program site that produced
+     it, so the link is the evidence rather than a claim about it. Nothing is
      listed that does not resolve.
      ============================================================== -->
 <section id="research" style="padding-top:0">
@@ -481,62 +457,42 @@ footer a{color:var(--hmc-accent)}
       <p>Explore the research, ask questions, and use what you find.</p>
     </div>
 
-    <div class="cat" style="margin-top:34px">
-      <article class="crd" data-reveal>
-        <div class="crd-body">
-          <p class="crd-kicker">February 2025 &middot; 21 pages</p>
-          <h3 style="margin:6px 0 8px">Healthcare Access on Skid Row</h3>
-          <p>A survey of healthcare access among people living on Skid Row: what coverage they hold, what stops them using it, and where care breaks down. Reviewed as exempt by the UCLA Institutional Review Board.</p>
-          <div class="crd-foot">
-            <a class="hmc-btn hmc-btn-primary" href="https://smo.healthmatters.clinic/reports/HMC-Skid-Row-Healthcare-Access-Report-Feb2025.pdf" target="_blank" rel="noopener noreferrer">Read the report</a>
-          </div>
-        </div>
-      </article>
+    <ul class="log">
+      <li class="log-item" data-reveal>
+        <span class="log-date">February 2025 &middot; 21 pages</span>
+        <h3>Healthcare Access on Skid Row</h3>
+        <p>A survey of healthcare access among people living on Skid Row: what coverage they hold, what stops them using it, and where care breaks down. Reviewed as exempt by the UCLA Institutional Review Board.</p>
+        <div class="cta-row" style="margin-top:6px"><a class="hmc-btn hmc-btn-secondary" href="https://smo.healthmatters.clinic/reports/HMC-Skid-Row-Healthcare-Access-Report-Feb2025.pdf" target="_blank" rel="noopener noreferrer">Read the report</a></div>
+      </li>
 
-      <article class="crd" data-reveal>
-        <div class="crd-body">
-          <p class="crd-kicker">2024 &middot; Street medicine</p>
-          <h3 style="margin:6px 0 8px">OraQuick HIV Self-Test Distribution</h3>
-          <p>What happened when HIV self-tests were handed out on the street rather than offered in a clinic, and what that says about reaching people testing has been missing.</p>
-          <div class="crd-foot">
-            <a class="hmc-btn hmc-btn-primary" href="https://smo.healthmatters.clinic/reports/HMC-OraQuick-HIV-Self-Test-Distribution-2024.pdf" target="_blank" rel="noopener noreferrer">Read the report</a>
-          </div>
-        </div>
-      </article>
+      <li class="log-item" data-reveal>
+        <span class="log-date">2024 &middot; Street medicine</span>
+        <h3>OraQuick HIV Self-Test Distribution</h3>
+        <p>What happened when HIV self-tests were handed out on the street rather than offered in a clinic, and what that says about reaching people testing has been missing.</p>
+        <div class="cta-row" style="margin-top:6px"><a class="hmc-btn hmc-btn-secondary" href="https://smo.healthmatters.clinic/reports/HMC-OraQuick-HIV-Self-Test-Distribution-2024.pdf" target="_blank" rel="noopener noreferrer">Read the report</a></div>
+      </li>
 
-      <article class="crd" data-reveal>
-        <div class="crd-body">
-          <p class="crd-kicker">January 2025 &middot; Disaster response</p>
-          <h3 style="margin:6px 0 8px">LA Wildfire Relief Response</h3>
-          <p>What HMC did during the January 2025 wildfires, what people needed, and what a community organization can and cannot do inside a disaster.</p>
-          <div class="crd-foot">
-            <a class="hmc-btn hmc-btn-primary" href="https://relief.healthmatters.clinic/reports/HMC-LA-Wildfire-Relief-Response-Jan2025.pdf" target="_blank" rel="noopener noreferrer">Read the report</a>
-          </div>
-        </div>
-      </article>
+      <li class="log-item" data-reveal>
+        <span class="log-date">January 2025 &middot; Disaster response</span>
+        <h3>LA Wildfire Relief Response</h3>
+        <p>What HMC did during the January 2025 wildfires, what people needed, and what a community organization can and cannot do inside a disaster.</p>
+        <div class="cta-row" style="margin-top:6px"><a class="hmc-btn hmc-btn-secondary" href="https://relief.healthmatters.clinic/reports/HMC-LA-Wildfire-Relief-Response-Jan2025.pdf" target="_blank" rel="noopener noreferrer">Read the report</a></div>
+      </li>
 
-      <article class="crd" data-reveal>
-        <div class="crd-body">
-          <p class="crd-kicker">Unstoppable &middot; Final report</p>
-          <h3 style="margin:6px 0 8px">The Unstoppable Workshop</h3>
-          <p>The full report behind the Unstoppable curriculum: what the workshop does, who came, and what participants said changed for them.</p>
-          <div class="crd-foot">
-            <a class="hmc-btn hmc-btn-primary" href="https://unstoppable.healthmatters.clinic/the-unstoppable-final-report.pdf" target="_blank" rel="noopener noreferrer">Read the report</a>
-          </div>
-        </div>
-      </article>
+      <li class="log-item" data-reveal>
+        <span class="log-date">Unstoppable &middot; Final report</span>
+        <h3>The Unstoppable Workshop</h3>
+        <p>The full report behind the Unstoppable curriculum: what the workshop does, who came, and what participants said changed for them.</p>
+        <div class="cta-row" style="margin-top:6px"><a class="hmc-btn hmc-btn-secondary" href="https://unstoppable.healthmatters.clinic/the-unstoppable-final-report.pdf" target="_blank" rel="noopener noreferrer">Read the report</a></div>
+      </li>
 
-      <article class="crd" data-reveal>
-        <div class="crd-body">
-          <p class="crd-kicker">Unstoppable &middot; Companion guide</p>
-          <h3 style="margin:6px 0 8px">Digital Companion Guide</h3>
-          <p>The workbook that goes with the Unstoppable workshop, written so somebody can use it on their own or run it with a group.</p>
-          <div class="crd-foot">
-            <a class="hmc-btn hmc-btn-primary" href="https://unstoppable.healthmatters.clinic/the-unstoppable-workshop-digital-companion-guide.pdf" target="_blank" rel="noopener noreferrer">Open the guide</a>
-          </div>
-        </div>
-      </article>
-    </div>
+      <li class="log-item" data-reveal>
+        <span class="log-date">Unstoppable &middot; Companion guide</span>
+        <h3>Digital Companion Guide</h3>
+        <p>The workbook that goes with the Unstoppable workshop, written so somebody can use it on their own or run it with a group.</p>
+        <div class="cta-row" style="margin-top:6px"><a class="hmc-btn hmc-btn-secondary" href="https://unstoppable.healthmatters.clinic/the-unstoppable-workshop-digital-companion-guide.pdf" target="_blank" rel="noopener noreferrer">Open the guide</a></div>
+      </li>
+    </ul>
 
     <div class="cta-row" style="margin-top:30px" data-reveal>
       <a class="hmc-btn hmc-btn-secondary" href="https://www.healthmatters.clinic/contact-us" target="_blank" rel="noopener noreferrer">Ask us about the research</a>
@@ -545,7 +501,7 @@ footer a{color:var(--hmc-accent)}
 </section>
 
 <!-- ===================== WHY EDUCATION IS PART OF HEALTH ===================== -->
-<section class="dark-sec" id="why">
+<section id="why" style="padding-top:0">
   <div class="wrap">
     <div class="measure" data-reveal>
       <p class="eyebrow">Why education is part of health</p>
@@ -553,10 +509,13 @@ footer a{color:var(--hmc-accent)}
       <p class="lede">Having information you can understand matters. Knowing where to find help matters. Having the skills to care for yourself or support someone else matters too.</p>
       <p>Education can help make those things easier to access.</p>
       <p>It's one more way we work to break down barriers to health and create more opportunities for people to live their healthiest lives.</p>
-      <p class="statement">Helping + Healing. That's what we're here for.</p>
     </div>
   </div>
 </section>
+
+<div class="block statement ink" data-reveal>
+  <p>Helping + Healing. <em>That's what we're here for.</em></p>
+</div>
 
 <!-- ===================== LEARNING DOESN'T HAVE TO STOP HERE ===================== -->
 <section id="keep-going">
