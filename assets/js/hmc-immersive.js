@@ -40,6 +40,28 @@
 
   /* ---------- 1. Lenis smooth scroll, synced to ScrollTrigger ---------- */
   if (window.Lenis) {
+    /* Lenis needs its own stylesheet and it was never included.
+       Lenis scrolls by calling window.scrollTo on every animation frame. This page
+       sets html{scroll-behavior:smooth}, so the browser applied its own smooth
+       animation to each of those calls, and each frame superseded the previous one
+       before it could finish. The result was that a wheel notch moved the page about
+       ten pixels instead of three hundred, and when the wheel stopped the last native
+       animation finally ran to the accumulated target and the page lurched. Measured
+       on smo.healthmatters.clinic: twenty three of twenty four wheel notches moved the
+       page by nothing, while Lenis reported targetScroll 300 and animatedScroll 295.
+       These are the rules Lenis ships in lenis.css. Injected here rather than added to
+       each site's stylesheet so the next site built from this script cannot omit them,
+       and only when Lenis is actually active, so the reduced-motion and iframe paths
+       keep native smooth anchor scrolling. */
+    var lenisCss = document.createElement('style');
+    lenisCss.setAttribute('data-hmc', 'lenis-required');
+    lenisCss.textContent =
+      'html.lenis,html.lenis body{height:auto}' +
+      '.lenis.lenis-smooth{scroll-behavior:auto !important}' +
+      '.lenis.lenis-smooth [data-lenis-prevent]{overscroll-behavior:contain}' +
+      '.lenis.lenis-stopped{overflow:hidden}';
+    document.head.appendChild(lenisCss);
+
     var lenis = new window.Lenis({
       duration: 1.05,
       easing: function (t) { return Math.min(1, 1.001 - Math.pow(2, -10 * t)); },
