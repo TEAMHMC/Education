@@ -666,5 +666,12 @@ footer a{color:var(--hmc-accent)}
 <script src="./assets/js/vendor/lenis.min.js"></script>
 <script src="./assets/js/hmc-immersive.js"></script>
 <script src="./assets/site/hmc-buttons-1.0.5.js"></script>
+<!-- Shared site-wide footer + nav. Replaces the local <footer class="sitefoot"> with the
+     five-column HMC footer so every satellite site carries one footer, maintained in one
+     place. Pinned by version and checked with Subresource Integrity: the file is served
+     from another host, so the browser must be able to prove it is the file we reviewed.
+     If it fails to load the local footer simply stays, which is a degraded page rather
+     than a broken one. -->
+<script src="https://unstoppable.healthmatters.clinic/assets/site/hmc-global-1.0.18.js" integrity="sha384-UFZW41eqM8HAksf23pHJ5ReMY6oqj58G0PLr7JOX9xaS6Dc6A78LsYhxmEFBgoIN" crossorigin="anonymous"></script>
 </body>
 </html>
