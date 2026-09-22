@@ -166,6 +166,7 @@ p{margin:0 0 18px}
 /* ===================== FAQ + FOOTER ===================== */
 .sitefoot{background:var(--hmc-text);color:rgba(255,255,255,.72)}
 .foot-inner{padding:clamp(48px,7vw,88px) 0 0}
+.faq-sec{background:var(--hmc-text);color:rgba(255,255,255,.72);padding:clamp(48px,7vw,88px) 0}
 .faq-head{max-width:640px;margin-bottom:36px}
 .faq-title{font-family:'Questrial',sans-serif;font-size:clamp(28px,4vw,44px);color:#fff;margin:0 0 14px;line-height:1}
 .faq-intro{margin:0;font-size:.98rem;color:rgba(255,255,255,.66)}
@@ -543,8 +544,12 @@ footer a{color:var(--hmc-accent)}
      navigation at all, so a person who landed on education.healthmatters.clinic
      had no way back to HMC. Both fixed.
      ================================================== -->
-<footer class="sitefoot">
-  <div class="wrap foot-inner">
+<!-- The Questions block, which used to be authored inside <footer class="sitefoot">.
+     hmc-global replaces that footer wholesale with the shared HMC one, so every one of
+     these fourteen answers was destroyed on load and the live page carried no FAQ at
+     all. It keeps the dark ground it was designed for; only its parent changed. -->
+<section id="faq" class="faq-sec">
+  <div class="wrap">
     <div class="faq-head">
       <h3 class="faq-title">Questions</h3>
       <p class="faq-intro">What people ask before they start.</p>
@@ -612,7 +617,11 @@ footer a{color:var(--hmc-accent)}
       </div>
 
     </div>
+  </div>
+</section>
 
+<footer class="sitefoot">
+  <div class="wrap foot-inner">
     <!-- Site navigation. There was none, so somebody who arrived here from a
          search had no route back to HMC. -->
     <div class="foot-brand">
