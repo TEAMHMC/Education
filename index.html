@@ -210,7 +210,11 @@ footer{background:var(--hmc-text);color:rgba(255,255,255,.64);padding:44px 0;fon
 footer a{color:var(--hmc-accent)}
 .skip{position:absolute;left:-9999px}
 .skip:focus{left:20px;top:20px;z-index:99;background:#fff;color:#0a0a0a;padding:12px 18px;border-radius:999px}
-</style></head>
+</style><!-- Analytics. Same GA4 property as healthmatters.clinic. Consent comes from the shared hmc_consent cookie, so nothing is stored until a visitor accepts. -->
+<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}(function(){var c=null;try{var m=document.cookie.match(/(?:^|;\s*)hmc_consent=([^;]*)/);if(m)c=decodeURIComponent(m[1])}catch(e){}if(!c){try{c=localStorage.getItem('hmc-cookie-consent')}catch(e){}}gtag('consent','default',{analytics_storage:c==='all'?'granted':'denied',ad_storage:'denied',ad_user_data:'denied',ad_personalization:'denied'})})();gtag('js',new Date());gtag('config','G-8W3TXXHT9M',{allow_google_signals:false});</script>
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-8W3TXXHT9M"></script>
+<script src="https://unstoppable.healthmatters.clinic/assets/site/hmc-cookies-1.0.2.js" integrity="sha384-x0WkKJ4/FZW8xFV1cD8Ln3N7QgR/89yZIb5tQS7KxwOOxgx+Kvci0sUmawHo3r7N" crossorigin="anonymous" defer></script>
+</head>
 <body>
 <a class="skip" href="#main">Skip to content</a>
 
